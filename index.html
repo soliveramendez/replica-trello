@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Trello</title>
+</head>
+
+<body>
+    <header>
+        <div class="elements">
+            <img class="logo" src="https://trello.com/b/HhLKuxWY/front-end" alt="">
+
+            <div>
+                <input class="search" type="text">
+                <i class="fas fa-search fa-1x" aria-hidden="true"></i>
+            </div>
+
+            <div class="icon-board">
+                <i class="fab fa-trello"></i>
+                <span>Tableros</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="title">
+        <span>Front-end<span>
+                <i class="far fa-star"></i>
+    </section>
+
+    <!--Tableros-->
+    <section id="board">
+
+        <div id="addList">
+            <!--Añadir Lista-->
+            <div id="containerAdd">
+                <button id="btnList" onclick="trello()">+ Añadir lista...</button>
+            </div>
+        </div>
+
+    </section>
+
+    <script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+
+</html>
