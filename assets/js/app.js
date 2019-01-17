@@ -30,12 +30,13 @@ function trello() {
     cerrar.appendChild(iconoCerrar);
     containerAdd.appendChild(cerrar);
 
-    cerrar.addEventListener("click", function () {
+       cerrar.addEventListener("click", function () {
         btn.style.display = "none";
         botonList.style.display = "inline-block";
         input.style.display = "none";
         containerAdd.style.background = "none";
         iconoCerrar.style.display = "none";
+        cerrar.style.display ="none";
 
     });
 
@@ -77,25 +78,32 @@ function trello() {
 
 
                 // Aquí se creará el botón de añadir
-                var btn1 = document.createElement("button");
+                var btn1 = document.createElement("boton");
                 btn1.setAttribute("id", "btn1");
                 var nodoText1 = document.createTextNode("Añadir");
                 btn1.appendChild(nodoText1);
                 newBoard.appendChild(btn1);
-
+                
 
                 //Añadir lista de item
                 btn1.addEventListener("click", function () {
-                    var list = textArea.value; //quiero rescatar el valor del input que lleva dentro el valor-todo lo que rescato de input
-                    textArea.value = ""; //limpiando placeholder(lugar donde se escribe)
+                 var list = textArea.value; //quiero rescatar el valor del input que lleva dentro el valor-todo lo que rescato de input
+                   textArea.value = ""; //limpiando placeholder(lugar donde se escribe)
                     if (list !== "") {
                         var parrafo1 = document.createElement("p"); //creando elemento p
                         parrafo1.classList.add("item");
                         var textNuevo = document.createTextNode(list); //creando nodo de texto list, no va con comilla
+                        
+                       newBoard.appendChild(parrafo1); //parrafo en el container
+                       parrafo1.appendChild(textNuevo); //input en el container
+                       newBoard.insertBefore(parrafo1, textArea);
+                       textArea.style.display ="none";
+                       btn1.style.display ="none";
+                       spanCerrar.style.display = "none";
+                       newInput.style.display ="inline-block";
+                       newBoard.insertBefore(parrafo1, newInput);
+                       
 
-                        newBoard.appendChild(parrafo1); //botón en el container
-                        parrafo1.appendChild(textNuevo); //input en el container
-                        newBoard.insertBefore(parrafo1, textArea);
                     };
                 });
 
@@ -107,13 +115,15 @@ function trello() {
                 spanCerrar.appendChild(iconoCerrar);
                 newBoard.appendChild(spanCerrar);
 
-                spanCerrar.addEventListener("click", function () {
-                    btn1.style.display = "none";
-                    spanCerrar.style.display = "none";
-                    textArea.style.display = "none";
-                    newInput.style.display = "inline-block";
-                    newBoard.insertBefore(newInput, textArea);
+               spanCerrar.addEventListener("click", function () {
+                 btn1.style.display = "none";
+                 spanCerrar.style.display = "none";
+                 textArea.style.display = "none";
+                 newInput.style.display = "inline-block";
+                // newBoard.insertBefore(newInput, textArea);
                 });
+                
+                
             });
         };
     });
